@@ -7,12 +7,22 @@
 
 #define TRUE 1
 
+
+void prompt(char *prefix, char *pbuff, size_t size)
+{
+	getcwd(pbuff, size);
+	printf("%s%s>>", prefix, pbuff);
+}
+
+
+
 int main(int argc, char *argv[], char *envp[])
 {
 	while(TRUE)
 	{
 		char cwd[256] = {0};
 		char command[256] = {0};
+		char pbuff[200] = {0};
 		char *argv_child[] = {NULL, NULL, NULL};
 		char *envp_child[] = {NULL, NULL};
 		int len = 0;
@@ -20,7 +30,8 @@ int main(int argc, char *argv[], char *envp[])
 		char path_touch[] = "/usr/bin/touch";
 		char path_rm[] = "/bin/rm";
 		argv_child[0] = (char*)malloc(sizeof(char)*10);
-		printf(">>");
+		prompt("@@", pbuff, 200);
+		//printf(">>");
 		strcpy(argv_child[0], "ls"); /*need to put reall value 
 		here because if we're gonna do somthing reall with 
 		this argv_child value we gonna need some reall value 
@@ -65,6 +76,7 @@ int main(int argc, char *argv[], char *envp[])
 		}
 		else
 		{
+			printf("error\n");
 			printf("the cwd is: %s \n", cwd); 
 			execve(cwd, argv_child, envp_child);
 		}
