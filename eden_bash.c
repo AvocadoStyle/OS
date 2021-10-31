@@ -28,6 +28,7 @@ int main(int argc, char *argv[], char *envp[])
 		int len = 0;
 		char path_ls[] = "/bin/ls";
 		char path_touch[] = "/usr/bin/touch";
+		char path_mkdir[] = "/bin/mkdir";
 		char path_rm[] = "/bin/rm";
 		argv_child[0] = (char*)malloc(sizeof(char)*10);
 		prompt("@@", pbuff, 200);
@@ -67,6 +68,14 @@ int main(int argc, char *argv[], char *envp[])
 			scanf("%s", command);
 			strcat(cwd, command);
 			len = strlen(cwd);
+		}
+		else if(strcmp(cwd, "kovetz") == 0)
+		{
+			strcpy(cwd, path_mkdir)
+			strcat(cwd, " ");
+			scanf("%s", command);
+			strcat(cwd, command);
+			len = strlen(cwd);			
 		}
 
 		if(fork())
