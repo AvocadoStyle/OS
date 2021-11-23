@@ -30,6 +30,7 @@ void *thread_funct2(void *arg)
 	//	usleep(100000);
 	//}
 	printf("my tid(need to be diffrent) %d and my pid %d\n", get_current_tid(), getpid());
+			
 	return NULL;
 }
 

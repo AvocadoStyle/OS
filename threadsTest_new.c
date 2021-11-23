@@ -2,7 +2,6 @@
 #include <pthread.h>
 #include <unistd.h>
 #define len 10
-
 void *thread_infinity1(void *arg)
 {
 	while(1)
