@@ -7,7 +7,7 @@ void *challenge(void *arg)
 	for(int i=0; i < len; i++)
 	{
 		g_value++;
-		// non atomic command
+		// non atomic command, the: g_value++
 			// csw
 		///////// move g_value, eax
 			// csw
@@ -23,7 +23,7 @@ void *challenge22(void *arg)
         for(int i=0; i < len; i++)
         {
                 g_value++;
-                // non atomic command
+                // non atomic command, the: g_value++
                         // csw
                 ///////// move g_value, eax
                         // csw
